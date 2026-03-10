@@ -1,0 +1,27 @@
+===KISA U-07 계정관리 취약점 진단 시작===
+대상 시스템: localhost.localdomain | 2026. 03. 10. (화) 17:17:46 KST
+[0;37m[INFO] U-07-01: 루트 계정 확인 중...[0m
+[0;31m[FAIL] FAIL: 루트 활성화[0m
+[1m[1;36m[FIN] U-07 /etc/shadow의 root계정 활성화/비활성화 및 etc/shadow 파일 유무 진단 완료![0m
+[0;37m[INFO] U-08: /etc/shadow 소유자/권한 확인 중...[0m
+[0;32m[OK] PASS:소유자 root, 권한 0 (400이하)[0m
+[1m[1;36m[FIN] U-08 /etc/shadow 소유자 및 권한 확인 완료[0m
+[0;37m[INFO] U-09 etc/hosts 소유자/권한 확인 중...[0m
+[0;31m[FAIL] 실패:소유자 root, 권한 644 -root/600 수정 필요[0m
+[1m[1;36m[FIN] U-09 /etc/hosts 소유자/권한  진단 완료[0m
+[0;37m[INFO] U-10 파일 및 디렉터리 소유자 설정 점검[0m
+[0;32m[OK] 소유자:root 그룹:root[0m
+[1m[1;36m[FIN] U-10 파일 및 디렉터리 소유자 설정 점검완료[0m
+[0;37m[INFO] U-15 : World Writable 파일 점검시작...[0m
+[양호]:시스템 중요 파일에 world writable 파일이 존재하지 않거나, 존재 시 설정 이유를 확인하고 있는 경우
+[취약]:시스템 중요 파일에 world writable 파일이 존재하나 해당 설정 이유를 확인하고 있지 않은 경우
+[0;32m[OK] 시스템에 불필요한 world writable 파일이 없습니다.[0m
+[1m[1;36m[FIN] U-15 : World Writable 파일 점검완료[0m
+[0;37m[INFO] U-20 Anonymous FTP 비활성화 진단 시작...[0m
+[U-20] Anonymous FTP 비활성화 점검 결과
+[1;33m[WARN] 취약: /etc/passwd에 ftp/anonymous 계정 존재 -> userdel ftp/anonymous 필요[0m
+[0;37m[INFO] /etc/vsftpd.conf 파일  없음 (FTP 서버 미설치 = 양호)[0m
+[0;37m[INFO] /etc/vsftpd/vsftpd.conf 파일  없음 (FTP 서버 미설치 = 양호)[0m
+[0;32m[OK] 양호 : FTP 서비스 미실행[0m
+
+[1m[1;36m[FIN] U-20 Anonymous FTP 비활성화 진단 끝![0m
